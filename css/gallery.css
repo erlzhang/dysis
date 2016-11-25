@@ -1,0 +1,147 @@
+/**Gallery Single**/
+body,html{
+	height:100%;
+}
+.container{
+	height:100%;
+}
+.main{
+	height:100%;
+	overflow:hidden;
+	padding-bottom:130px;
+}
+.gallery{
+	background-color:#696969;
+	width:100%;
+	height:100%;
+	text-align:center;
+	position:relative;
+}
+.photo{
+	display:inline-block;
+	margin:0 auto;
+	position:relative;
+}
+.photo img{
+	width:100%;
+	height:100%;
+}
+.photo figcaption{
+	position:absolute;
+	bottom:10%;
+	left:0;
+	display:inline-block;
+	background-color:rgba(0,0,0,.7);
+	color:#fff;
+	text-align:left;
+	padding:8px 15px;
+}
+
+.photolist{
+	width:100%;
+	position:fixed;
+	bottom:0;
+	background-color:#333;
+	text-align:center;
+	padding:15px 0;
+	height:130px;
+	overflow:hidden;
+	
+}
+.photolist ul{
+	margin:0 auto;
+}
+
+.photolist li{
+	display:inline-block;
+	margin:0 3px;
+	float:left;
+}
+.photolist li img{
+	max-height:100px;
+	height:auto;
+	border:3px solid #f2f2f2;
+}
+.photolist li p{
+	display:none;
+}
+.gallery-turn{
+	position:absolute;
+	color:#fff;
+	opacity:.7;
+	width:10%;
+	top:50%;
+	height:100px;
+	text-align:center;
+	line-height:100px;
+	margin-top:-50px;
+	cursor:pointer;
+}
+.gallery-turn.left{
+	left:20px;
+}
+.gallery-turn.right{
+	right:20px;
+}
+.gallery-turn.left:hover i{
+	margin-left:-30%;
+	opacity:.3;
+}
+.gallery-turn.right:hover i{
+	margin-left:30%;
+	opacity:.3;
+}
+.gallery-caption{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	background-color:rgba(0,0,0,.6);
+	color:#fff;
+	height:80px;
+	opacity:0;
+	line-height:80px;
+}
+.gallery-caption h1,.gallery-caption p{
+	display:inline-block;
+	opacity:0;
+}
+.gallery-caption h1{
+	font-size:1.35rem;
+	margin:0 30px 0 0;
+}
+.gallery-caption:hover{
+	opacity:1;
+}
+.gallery-caption:hover h1,.gallery-caption:hover p{
+	opacity:1;
+}
+#slide-prev,#slide-next{
+	position:absolute;
+	top:50%;
+	display:inline-block;
+	width:40px;
+	height:50px;
+	text-align:center;
+	line-height:50px;
+	margin-top:-25px;
+	background-color:rgba(255,255,255,.75);
+	cursor:pointer;
+	font-size:20px;
+	z-index:33;
+}
+#slide-prev{
+	left:0;
+}
+#slide-next{
+	right:0;
+}
+
+@media screen and (max-width:1000px){
+	.gallery-caption,.gallery-caption h1{
+		opacity:1;
+	}
+	.gallery-caption p{
+		display:none;
+	}
+}

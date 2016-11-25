@@ -1,0 +1,67 @@
+/*Photography Archive*/
+.photos{
+	width:100%;
+	float:left;
+}
+.photos:after{
+	content:"";
+	display:block;
+	margin-bottom:3rem;
+	clear:both;
+}
+.photos figure{
+	width:33.333%;
+	float:left;
+	margin:0;
+	position:relative;
+	overflow:hidden;
+}
+.photos figure img{
+	vertical-align:bottom;
+	margin:0;
+    width: -webkit-calc(100% + 50px);
+    width: calc(100% + 50px);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-40px,0, 0);
+    transform: translate3d(-40px,0,0);
+}
+.photos figure figcaption{
+	position:absolute;
+	background-color:rgba(239,239,239,.9);
+	color:#333;
+	display:inline-block;
+	right:10%;
+	bottom:15%;
+	padding:15px 20px;
+	opacity:0;
+	width:80%;
+}
+.photos figure figcaption h3{
+	font-size:1.35rem;
+	font-weight:normal;
+	margin:.5rem 0 .7rem 0;
+}
+.photos figure figcaption p{
+	color:#404040;
+}
+.photos figure:hover img{
+	opacity:.8;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+.photos figure:hover figcaption{
+	bottom:10%;
+	opacity:1;
+}
+@media screen and (max-width:800px){
+	.photos figure{
+		width:50%;
+	}
+}
+@media screen and (max-width:450px){
+	.photos figure{
+		width:100%;
+		float:none;
+	}
+}

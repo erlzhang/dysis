@@ -1,0 +1,58 @@
+.portfolio{
+	max-width:1200px;
+	width:100%;
+	margin:3rem auto;
+}
+.portfolio figure{
+	width:31.333%;
+	float:left;
+	margin-bottom:2rem;
+	margin-left:1%;
+	margin-right:1%;
+	border-radius:5px;
+	position:relative;
+	
+}
+.portfolio figure img{
+	max-width:100%;
+	height:auto;
+	border-radius:5px;
+	vertical-align:bottom;
+}
+@media screen and (max-width:900px){
+	.portfolio figure{
+		width:48%
+	}
+}
+@media screen and (max-width:500px){
+	.portfolio figure{
+		width:98%;
+	}
+}
+.portfolio figure figcaption{
+	text-align:center;
+	padding:1rem 0;
+	position:relative;
+	background-color:#fff;
+}
+.portfolio figure figcaption p{
+	position:absolute;
+	top:3rem;
+	background-color:#fff;
+	z-index:111;
+	box-shadow:3px 3px 3px #ccc;
+	padding:1rem;
+	color:#999;
+	transform:rotateX(90deg);
+	transform-origin:-100% 0 0;
+	border-radius:0 0 5px 5px;
+	text-align:left;
+	transition-delay:.35s;
+}
+.portfolio figure:hover{
+	box-shadow:3px 3px 3px #ccc;
+}
+
+.portfolio figure:hover figcaption p{
+	transform:rotateX(0deg);
+}
