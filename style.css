@@ -1,8 +1,8 @@
-﻿/*
+﻿﻿﻿/*
 Theme Name: Dysis
 Theme URI: http://erl.im/
 Description: Erl自用测试主题
-Tags: blog, portfolio, shop, clean, white, elegant, fashion, lifestyle, simple, beauty, creative, modern, design, stylish
+Tags: blog, portfolio, clean, white, elegant,lifestyle, simple, beauty, creative, modern, design, stylish
 Author: Erl
 Author URI: http://erl.im/
 Version: 1.0
@@ -16,6 +16,7 @@ License URI: licence/GPL.txt
 	margin:0;
 	box-sizing:border-box;
 	transition:all 0.35s ease-in;
+	border-color:#fff;
 }
 body,html{
 	font-family:"OpenSans","微软雅黑","宋体",Arial,Verdana,arial,serif;
@@ -38,6 +39,10 @@ h1,h2,h3{
 .small{
 	font-size:.9rem;
 }
+.loading{
+	text-align:center;
+	line-height:50px;
+}
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -58,6 +63,57 @@ h1,h2,h3{
     transform: rotate(359deg);
   }
 }
+
+@keyframes fadeDown{
+	0%{
+		opacity: 0;
+		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0);
+	}
+	100%{
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+@-webkit-keyframes fadeDown {
+  0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0);
+  }
+  100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+  }
+}
+@keyframes fadeUp{
+	0%{
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
+	}
+	100%{
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+@-webkit-keyframes fadeUp {
+  0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
+  }
+  100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+  }
+}
+
+
 .container{
 	width:100%;
 }
@@ -87,7 +143,7 @@ h1,h2,h3{
 	line-height:30px!important;
 	font-size:1.15rem;
 }
-.menu li:hover .icon{
+.menu li:hover .icon,.author_icon a:hover .icon{
 	font-size:1rem;
 }
 .menu li .menu_title{
@@ -129,10 +185,7 @@ h1,h2,h3{
 .search.active .input-search{
 	width:200px;
 }
-.comment{
-	line-height:50px;
-	
-}
+
 .siderhide{
 	display:none;
 }
@@ -158,6 +211,13 @@ h1,h2,h3{
 	-webkit-animation: spin 2s infinite linear;
 	animation: spin 2s infinite linear;
 }
+.author_icon{
+	display:none;
+	margin:5px 10px 0 10px;
+}
+.author_icon a{
+}
+
 
 /*边栏展开后状态*/
 .sidebar.open{
@@ -166,11 +226,11 @@ h1,h2,h3{
 }
 .sidebar.open .author{
 	width:100%;
-	margin-bottom:6rem;
+	margin-bottom:8.5rem;
 }
 .sidebar.open .author_cover{
 	height:120px;
-	background-image:url(images/7.jpg);
+	background-image:url(https://erl.im/wp-content/uploads/2016/10/wusong7.jpg);
 	height:127px;
 	background-size:cover;
 	background-position:center center;
@@ -195,13 +255,34 @@ h1,h2,h3{
 }
 .sidebar.open .author_info h3{
 	display:inline-block;
-	font-size:1.35rem;
+	font-size:1.5rem;
 	font-weight:normal;
-	margin-top:-40px;
+	margin-top:-44px;
+	-webkit-animation-name: fadeDown;
+	animation-name: fadeDown;
+	-webkit-animation-duration: .75s;
+	animation-duration: .75s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	animation-delay:.25s;
+	-webkit-animation-delay:.25s;
 }
 .sidebar.open .author_info p{
 	padding:5px 10px;
 	margin-top:10px;
+	display:block;
+	font-size:.9rem;
+	line-height:1.35rem;
+	-webkit-animation-name: fadeUp;
+	animation-name: fadeUp;
+	-webkit-animation-duration: .75s;
+	animation-duration: .75s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	animation-delay:.25s;
+	-webkit-animation-delay:.25s;
+}
+.sidebar.open .author_icon{
 	display:block;
 }
 .sidebar.open .menu li{
@@ -228,7 +309,7 @@ h1,h2,h3{
 	display:inline-block;
 	vertical-align:middle;
 }
-.sidebar.open .search .icon,.sidebar.open .comment .icon{
+.sidebar.open .search .icon{
 	display:none;
 }
 .sidebar.open .search{
@@ -255,6 +336,7 @@ h1,h2,h3{
 }
 .sidebar.open .siderhide i.fa-times{
 	display:none;
+	color:#efefef;
 }
 .sidebar.open .sidershow{
 	display:none;
@@ -283,17 +365,14 @@ h1,h2,h3{
 	.sidebar .sidershow i.fa-bars{
 		display:inline-block;
 		position:fixed;
-		top:10px;
-		left:10px;
+		top:8px;
+		left:5px;
 		padding:7px 10px;
 		border-radius:5px;
 		text-align:center;
+		font-size:1.35rem;
 	}
-	.sidebar .sidershow i.fa-bars:after{
-		content:"MENU";
-		font-family:"OpenSans";
-		margin-left:5px;
-	}
+
 	.sidebar.open .siderhide i.fa-times{
 		display:inline-block;
 	}
@@ -390,21 +469,38 @@ h1,h2,h3{
 		top:0;
 		left:0;
 		width:100%;
-		color:#fff;
-		background-color:#00ADB5;
+		color:#333;
+		background-color:#fff;
 		display:block;
+		z-index:444;
+		border-bottom:1px solid #e6eaea;
 	}
-	.mobile-top h1{
-		text-align:center;
+	.mobile-top-left{
+		width:50px;
+		height:50px;
+		border-right:1px solid #e6eaea;
+		float:left;
+	}
+	.mobile-top-right{
+		position:absolute;
+		width:100%;
+		padding-left:50px;
+		left:0;
+		top:0;
+	}
+	.mobile-top-right h1{
 		font-size:1.35rem;
+		line-height:50px;
+		text-align:center;
 	}
-	.mobile-top small{
-		font-size:.9rem;
-		margin-left:2em;
+	.mobile-top-right small{
+		font-size:1rem;
+		margin-left:1rem;
+		color:#999;
 	}
 }
 
-body,html,a,.menu li:hover .icon{
+body,html,a,.menu li:hover .icon,.author_icon a:hover .icon{
 	color:#333;
 }
 .sidebar,.icon,.menu li .menu_title,.input-search{
@@ -416,20 +512,56 @@ body,html,a,.menu li:hover .icon{
 .author_info .avatar{
 	border: 5px solid #333;	
 }
-a,.sidebar.open .input-search,.top h1 small,.footer{
-	color:#F7F7F;
-}
-.sidebar,.menu li a,.input-search,.sidershow{
+.sidebar,.menu li a,.input-search,.sidershow,.author_icon a{
 	color:#f2f2f2;
 }
-.menu li:hover .icon,.sidebar.open .input-search{
+.menu li:hover .icon,.sidebar.open .input-search,.author_icon a:hover .icon{
 	background-color:#f2f2f2;
 }
 @media screen and (max-width:1000px){
 	.siderhide,.sidebar .sidershow i.fa-bars,.mobile-top{
-		color:#fff;
+		color:#333;
 	}
-	.sidebar .sidershow i.fa-bars{
-		background-color:rgba(0,0,0,.7);
+
+}
+.screen-reader-text{
+	display:none;
+}
+.nav-links{
+	text-align:center;
+	margin:1.5rem 0;
+}
+.navigation:before{
+	content:"";
+	clear:both;
+	display:block;
+}
+.page-numbers{
+	display:inline-block;
+	padding:5px 15px;
+}
+.page-numbers:hover,.page-numbers.current,.page-numbers.prev,.page-numbers.next{
+	background-color:#111;
+	color:#fff;
+}
+.page-numbers.prev,.page-numbers.next{
+	border-radius:50%;
+}
+
+/*面包屑导航*/
+.breadcrumbs{
+	font-size:.95rem;
+	color:#999;
+	margin-bottom:1.5rem;
+}
+.breadcrumbs a{
+	color:#999;
+}
+.breadcrumbs a i{
+	margin-right:5px;
+}
+@media screen and (max-width:1000px){
+	.breadcrumbs{
+		display:none;
 	}
 }

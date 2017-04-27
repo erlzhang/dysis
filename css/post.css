@@ -1,15 +1,17 @@
 /*Post Single*/
 .main-content{
-	padding-right:27%;
+	
 }
 .content-wrap{
 	max-width:830px;
-	float:right;
-	padding:6rem 15px 0 15px;
+	margin:0 auto;
+	padding:4rem 15px 0 15px;
+	width:100%;
 }
 .content img{
 	max-width:100%;
 	width:auto;
+	margin-bottom:1rem;
 }
 .content p{
 	margin-bottom:1rem;
@@ -19,9 +21,12 @@
 }
 
 .content-header h1{
-	margin:0 0 2rem 0;
+	margin:0 0 1.5rem 0;
 	font-size:2.3rem;
 	line-height:1.5em;
+}
+.content-header p.small em{
+	margin-right:10px;
 }
 .content h2{
 	font-size:1.8rem;
@@ -66,6 +71,8 @@
 .content pre{
 	padding:20px;
 	border-radius:10px;
+	margin-bottom:1rem;
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
 .content pre code{
 	background:none;
@@ -88,7 +95,10 @@
 .content-catalog{
 	position:fixed;
 	top:100px;
-	left:75%;
+	left:50%;
+	margin-left:445px;
+	width:200px;
+	text-align:left;
 
 }
 .content-catalog li{
@@ -113,6 +123,7 @@
 		padding:10px 15px;
 		z-index:222;
 		background-color:rgba(0,0,0,.7);
+		margin:0;
 	}
 	.content-catalog.open{
 		left:auto;
@@ -149,7 +160,7 @@
 
 
 
-.content-header p,.content code,.content pre,.content blockquote{
+.content-header p,.content-header p a,.content code,.content pre,.content blockquote{
 	color:#787878;
 }
 .content a{
@@ -186,3 +197,80 @@
 .tags a:hover{
 	border-color:#787878;
 }
+.post-navigation{
+
+}
+.post-navigation:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.nav-previous,.nav-next{
+	width:50%;
+	border-top:1px solid #fff;
+	border-bottom:1px solid #fff;
+}
+.nav-previous:hover,.nav-next:hover{
+	border-top:1px solid #eee;
+	border-bottom:1px solid #eee;	
+}
+.nav-previous a,.nav-next a{
+	width:100%;
+	display:block;
+	padding:10px 0;
+}
+.nav-previous{
+	float:left;
+	text-align:left;
+}
+.nav-next{
+	float:right;
+	text-align:right;
+}
+.post-options{
+	position:relative;
+	float:right;
+}
+.post-options li{
+	display:inline-block;
+	width:36px;
+	height:36px;
+	line-height:36px;
+	font-size:1.5rem;
+	text-align:center;
+	color:#ccc;
+	position:relative;
+	
+}
+.post-options li i{
+	cursor:pointer;
+}
+.icon-number{
+	position:absolute;
+	background-color:rgba(0,0,0,.5);
+	color:#fff;
+	line-height:22px;
+	font-size:.8rem;
+	text-align:center;
+	border-radius:50%;
+	top:-23px;
+	left:7px;
+	border-radius:3px;
+	padding:0 5px;
+}
+.icon-number:before{
+	content:"";
+    border-style: solid;
+    border-width:5px 3px 0 3px ;
+    border-color:rgba(0,0,0,.5) transparent transparent transparent;
+    position: absolute;
+    top: 22px;
+    left: 50%;
+	margin-left:-2.5px;
+    width: 0;
+    height: 0;
+}
+.post-like-on{
+	color:#d9534f;
+}
+

@@ -1,0 +1,260 @@
+.container,.main{
+	height:100%;
+}
+.main{
+	position:relative;
+}
+.novel-index{
+	margin:3rem auto;
+}
+.novel-left{
+	width:30%;
+	position:fixed;
+	left:0;
+	top:0;
+	height:100%;
+	padding-left:50px;
+}
+.novel-right{
+	width:70%;
+	float:right;
+}
+.novel-right .content{
+	margin:3rem auto;
+}
+.novel-header{
+	padding:0 3rem;
+	margin-top:40%;
+}
+.novel-index .novel-header{
+	
+}
+.novel-header h1{
+	text-align:right;
+	border-bottom:2px solid #333;
+	line-height:2em;
+}
+.novel-header p{
+	color:#999;
+	margin:1rem auto 1.5rem auto;
+	line-height:1.5rem;
+	text-align:right;
+}
+
+.novel-catalog{
+	width:80%;
+	float:right;
+	margin:3rem 10%;
+	padding:1rem;
+}
+.novel-catalog h3{
+	display:none;
+}
+.novel-catalog a{
+	width:50px;
+	line-height:50px;
+	text-align:center;
+	display:inline-block;
+	border:1px solid #e6eaea;
+	margin:3px 5px;
+}
+.toggle-novel-catalog{
+	display:none;
+}
+.chapter-nav-links{
+	width:100%;
+	margin:1.5rem 0;
+	float:left;
+}
+.chapter-nav-links:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.chapter-nav-links a{
+	display:inline-block;
+	padding:.5rem 1rem;
+	border:1px solid #fff;
+}
+.chapter-nav-links a.next{
+	float:right;
+}
+.chapter-nav-links a:hover{
+	border-color:#e6eaea;
+}
+
+
+
+.chapter-content:first-letter{
+	font-size:2.2rem;
+	line-height:2.2rem;
+	margin-right:5px;
+}
+.content p{
+	margin-bottom:1rem;
+}
+.content h1{
+	font-size:2.35rem;
+	line-height:2em;
+	margin:1rem 0 1.5rem 0;
+}
+.content a{
+	color:#00ADB5;
+}
+.content blockquote{
+	padding:10px 20px;
+	margin:1rem 0;
+	border-left:5px solid #a9a9a9;
+}
+.post-navigation{
+
+}
+.post-navigation:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+.nav-previous,.nav-next{
+	width:50%;
+	border-top:1px solid #fff;
+	border-bottom:1px solid #fff;
+}
+.nav-previous:hover,.nav-next:hover{
+	border-top:1px solid #eee;
+	border-bottom:1px solid #eee;	
+}
+.nav-previous a,.nav-next a{
+	width:100%;
+	display:block;
+	padding:10px 0;
+	color:#333;
+}
+.nav-previous{
+	float:left;
+	text-align:left;
+}
+.nav-next{
+	float:right;
+	text-align:right;
+}
+@media screen and (max-width:1000px){
+
+	.novel-left{
+		padding-left:0px;
+		position:relative;
+		width:100%;
+		height:auto;
+	}
+	.novel-right{
+		width:100%;
+		padding-left:1.5rem;
+		padding-right:1.5rem;
+	}
+	.novel-header{
+		margin-top:1rem;
+		padding:0 1.5rem;
+		position:relative;
+	}
+	.novel-header h1,.novel-header p{
+		text-align:left;
+	}
+	.novel-header h1{
+		font-size:1.5rem;
+	}
+	.novel-header p{
+		font-size:.9rem;
+		margin:5px 0;
+	}
+	.toggle-novel-catalog em{
+		font-style:normal;
+		margin-left:10px;
+	}
+	.novel-right .content{
+		margin-top:0;
+		margin-bottom:3rem;
+	}
+	.novel-right .content h1{
+		font-size:2rem;
+	}
+	.chapter-content:first-letter{
+		font-size:1.8rem;
+		line-height:1.8rem;
+		margin-right:3px;
+	}
+	.chapter-nav-links{
+		position:fixed;
+		bottom:0;
+		left:0;
+		z-index:1;
+		margin:0;
+		padding-right:120px;
+		background-color:#fff;
+		width:100%;
+		border-top:1px solid #e6eaea;
+	}
+	.chapter-nav-links a{
+		width:50%;
+		border:0;
+		border-right:1px solid #e6eaea;
+		padding:0;
+		text-align:center;
+		line-height:40px;
+	}
+	.toggle-novel-catalog{
+		display:inline-block;
+		position:fixed;
+		right:0;
+		bottom:0px;
+		background-color:#fff;
+		float:right;
+		width:120px;
+		text-align:center;
+		line-height:40px;
+		z-index:2;
+		color:#00ADB5
+	}
+	.novel-catalog{
+		position:fixed;
+		width:0;
+		height:100%;
+		top:0;
+		right:0;
+		background-color:#fff;
+		display:block;
+		z-index:55555;
+		opacity:0;
+		margin:0;
+	}
+	.novel-catalog.on{
+		width:100%;
+		opacity:1;
+	}
+	.novel-catalog.on h3{
+		display:block;
+		margin-bottom:1.5rem;
+		font-size:1.15rem;
+		line-height:50px;
+		color:#00ADB5;
+	}
+	.mobile-off{
+		font-size:1.5rem;
+		width:50px;
+		height:50px;
+		line-height:50px;
+		display:inline-block;
+		color:#00ADB5;
+		text-align:center;
+	}
+	
+}
+@media screen and (max-width:600px){
+	.chapter-nav-links{
+		padding-right:50px;
+	}
+	.toggle-novel-catalog{
+		width:50px;
+	}
+	.toggle-novel-catalog em{
+		display:none;
+	}
+}

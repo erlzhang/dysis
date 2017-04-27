@@ -1,0 +1,91 @@
+.container{
+	width:100%;
+	height:100%;
+}
+.main{
+	width:100%;
+	height:100%;
+}
+.books{
+	width:100%;
+	height:100%;
+}
+.book{
+	width:100%;
+	height:100%;
+	background-color:#ccc;
+	position:relative;
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center center;
+}
+.book:before{
+	content:"";
+	width:100%;
+	height:100%;
+	background-color:rgba(0,0,0,.4);
+	position:absolute;
+	left:0;
+	top:0;
+}
+.footer{
+	position:fixed;
+	bottom:0;
+	width:100%;
+}
+.book-header{
+	max-width:340px;
+	width:80%;
+	position:absolute;
+	bottom:10%;
+	left:10%;
+	color:#eee;
+	padding:1.5rem;
+}
+.book-header h1{
+	line-height:2em;
+	font-size:3.5rem;
+	margin-bottom:1rem;
+}
+.book-header h1:after{
+	content:"";
+	width:0;
+	height:0;
+	border-top:2px solid #fff;
+	display:block;
+	transition:all 0.35s ease-in;
+}
+.book-header p{
+	color:#ddd;
+	opacity:0;
+}
+
+.book:hover .book-header{
+	bottom:20%;
+}
+.book:hover .book-header h1{
+	font-size:2.7rem;
+}
+.book:hover .book-header p{
+	opacity:1;
+}
+
+.book:hover .book-header h1:after{
+	width:100%;
+}
+
+@media screen and (max-width:1000px){
+	.book .book-header{
+		bottom:20%;
+	}
+	.book .book-header h1{
+		font-size:2.7rem;
+	}
+	.book .book-header p{
+		opacity:1;
+	}
+
+	.book .book-header h1:after{
+		width:100%;
+	}
+}

@@ -54,6 +54,11 @@
 	bottom:10%;
 	opacity:1;
 }
+@media screen and (max-width:1000px){
+	.photos{
+		padding-top:50px;
+	}
+}
 @media screen and (max-width:800px){
 	.photos figure{
 		width:50%;

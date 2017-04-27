@@ -3,12 +3,19 @@
 	max-width:1000px;
 	margin:3rem auto;
 }
+.category-description{
+	margin-bottom:3rem;
+	background-color:#F0F0F0;
+	color:#787878;
+	padding:.75rem 1.5rem;
+	border-radius:3px;
+}
 .posts h1{
 	font-size:1.8rem;
-	margin:1rem 0;
+	line-height:1.5em;
 }
-.article{
-	
+.posts a h1:hover{
+	color:#00ADB5;
 }
 .posts .article:after{
 	content:"";
@@ -22,10 +29,29 @@
 	position:relative;
 	float:left;
 }
+.article-thumb img:hover{
+	-webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+    filter: grayscale(100%);
+}
 .article-content{
 	float:left;
 	padding:0 1.5rem;
 	width:60%;
+}
+.article-content p.small{
+	color:#787878;
+	margin:0.75rem 0 1rem 0;
+}
+.article-content p.small a{
+	color:#787878;
+	transition:none;
+}
+.article-content p.small a:hover{
+	color:#00ADB5;
+}
+.article-content p.small em{
+	font-style:normal;
+	margin-right:10px;
 }
 .article-thumb:before{
 	content:"";
@@ -78,8 +104,49 @@
 .more-link:hover:before{
 	height:100%;
 }
+
+
 .article.odd .more-link{
 	float:left;
+}
+.load-more-posts{
+	display:inline-block;
+	width:150px;
+	height:50px;
+	margin:1.5rem 0;
+	position:relative;
+}
+.load-more-posts:before{
+	position:absolute;
+	line-height:50px;
+	width:100%;
+	font-size:22px;
+	top:-50px;
+	left:0;
+	display:block;
+	transition:all .35s;
+}
+.load-more-posts span{
+	position:absolute;
+	line-height:50px;
+	width:100%;
+	top:0px;
+	left:0;
+	display:block;	
+}
+.load-more-posts:hover span{
+	top:50px;
+}
+.load-more-posts:hover:before{
+	top:0;
+}
+@media screen and (max-width:1000px){
+	.top{
+		display:none;
+	}
+	.photography{
+		margin-top:100px;
+	}
 }
 @media screen and (max-width:700px){
 	.article.odd .article-thumb, .article.odd .article-content{
@@ -94,6 +161,10 @@
 	.more-link,.article.odd .more-link{
 		float:none;
 	}
+	.posts h1{
+		margin-top:1rem;
+	}
 }
-.more-link{border:2px solid #333;}
-.more-link:before{background: #333;}
+.more-link,.load-more-posts{border:2px solid #333;}
+.more-link:before,.load-more-posts{background: #333;}
+.load-more-posts{color:#f2f2f2;}

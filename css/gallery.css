@@ -36,7 +36,15 @@ body,html{
 	text-align:left;
 	padding:8px 15px;
 }
-
+.loading{
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-25px;
+	margin-top:-25px;
+	color:#4c4c4c;
+	opacity:0;
+}
 .photolist{
 	width:100%;
 	position:fixed;
@@ -46,7 +54,6 @@ body,html{
 	padding:15px 0;
 	height:130px;
 	overflow:hidden;
-	
 }
 .photolist ul{
 	margin:0 auto;
@@ -61,6 +68,7 @@ body,html{
 	max-height:100px;
 	height:auto;
 	border:3px solid #f2f2f2;
+	box-sizing:content-box;
 }
 .photolist li p{
 	display:none;
@@ -98,9 +106,9 @@ body,html{
 	width:100%;
 	background-color:rgba(0,0,0,.6);
 	color:#fff;
-	height:80px;
+	height:70px;
 	opacity:0;
-	line-height:80px;
+	line-height:70px;
 }
 .gallery-caption h1,.gallery-caption p{
 	display:inline-block;
@@ -116,9 +124,10 @@ body,html{
 .gallery-caption:hover h1,.gallery-caption:hover p{
 	opacity:1;
 }
+.icon-mobile{
+	display:none;
+}
 #slide-prev,#slide-next{
-	position:absolute;
-	top:50%;
 	display:inline-block;
 	width:40px;
 	height:50px;
@@ -131,10 +140,14 @@ body,html{
 	z-index:33;
 }
 #slide-prev{
+	position:absolute;
+	top:50%;
 	left:0;
 }
 #slide-next{
+	position:fixed;
 	right:0;
+	bottom:40px;
 }
 
 @media screen and (max-width:1000px){
@@ -143,5 +156,70 @@ body,html{
 	}
 	.gallery-caption p{
 		display:none;
+	}
+	.mobile-top{
+		display:none;
+	}
+	.sidebar .sidershow i.fa-bars{
+		color:#fff;
+	}
+}
+.nav-previous,.nav-next{
+	position:absolute;
+	top:0;
+	padding:0 1.5rem;
+}
+.nav-previous{
+	left:30px;
+}
+.nav-next{
+	right:0;
+}
+.nav-previous a,.nav-next a{
+	color:#fff;
+}
+@media screen and (max-width:800px){
+	.nav-links{
+		position:fixed;
+		bottom:0;
+		left:0;
+		width:100%;
+		background-color:#fff;
+		height:45px;
+		margin:0;
+		line-height:45px;
+		text-align:left;
+		padding-left:50px;
+	}
+	.nav-previous,.nav-next{
+		padding:0;
+		position:relative;
+		left:auto;
+		display:inline-block;
+		float:left;
+		width:50%;
+		text-align:center;
+	}
+	.nav-previous a,.nav-next a{
+		color:#333;
+		font-size:1.35rem;
+	}
+	.photolist{
+		bottom:45px;
+	}
+	.sidebar .sidershow i.fa-bars{
+		bottom:0;
+		top:auto;
+		color:#333;
+		z-index:666666;
+		width:45px;
+		line-height:45px;
+		padding:0;
+	}
+	.icon-pc{
+		display:none;
+	}
+	.icon-mobile{
+		display:inline;
 	}
 }
