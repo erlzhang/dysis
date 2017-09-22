@@ -18,4 +18,4 @@
 [演示地址][1]   [使用说明][2]
 
 [1]: https://erl.im/
-[2]: http://erl.design/blog/?p=527
+[2]: https://erl.im/dysis.html
