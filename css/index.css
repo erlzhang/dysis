@@ -21,13 +21,13 @@
 /*相册展示*/
 .photography{
 	width:100%;
-	height:350px;
+	height:250px;
 	overflow:hidden;
 	position:relative;
-	
+	margin-bottom: 25px;
 }
 .pic_list{
-	height:350px;
+	height:250px;
 	transition-duration:0s;
 }
 .pic_list figure{
@@ -41,7 +41,7 @@
 .pic_list figure img{
 	vertical-align:bottom;
 	margin:0!important;
-	height:350px;
+	height:250px;
 	width:auto;
 	-webkit-transition: -webkit-transform 0.35s;
     transition: transform 0.35s;
@@ -115,7 +115,7 @@
 #slide-next{
 	right:0;
 }
-#slide-prev i:before,#slide-next i:before{
+#slide-prev:before,#slide-next:before{
 	line-height:50px;
 }
 @media screen and (max-width:800px){
@@ -135,4 +135,5 @@
 }
 #slide-prev,#slide-next{
 	background-color:rgba(255,255,255,.75);
+	color: #333;
 }

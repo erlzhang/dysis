@@ -4,9 +4,54 @@ add_filter( 'show_admin_bar', '__return_false' );
 //特色图片
 add_theme_support( 'post-thumbnails' );
 
+/*模板*/
+//文章特色图片
+function dysis_post_thumbnail(){
+	if( has_post_thumbnail() ){
+		the_post_thumbnail();
+	}else{
+		$thumb = $thumb = get_template_directory_uri().'/thumbs/'.rand(1,27).'.jpg';
+		echo '<img src="'.$thumb.'">';
+	}
+}
+//翻页
+function dysis_posts_pagination(){
+	return the_posts_pagination( array(
+				'mid_size' => 2,
+				'prev_text' => '<span class="icon icon-chevron-thin-left"></span>',
+				'next_text' => '<span class="icon icon-chevron-thin-right"></span>',
+				'screen_reader_text' => ''
+			) );
+}
+
+
+//CDN
+if ( !is_admin() ) {
+    add_action('wp_loaded','c7sky_ob_start');
+    function c7sky_ob_start() {
+        ob_start('c7sky_qiniu_cdn_replace');
+    }
+function c7sky_qiniu_cdn_replace($html){
+    $local_host = 'https://erl.im'; 
+    $cdn_host = 'https://css.img.js.cn'; 
+    $cdn_exts   = 'png|jpg|jpeg|gif|ico'; 
+    $cdn_dirs   = 'wp-content|wp-includes'; 
+    $cdn_dirs   = str_replace('-', '\-', $cdn_dirs);
+    if ($cdn_dirs) {
+        $regex  =  '/' . str_replace('/', '\/', $local_host) . '\/((' . $cdn_dirs . ')\/[^\s\?\\\'\"\;\>\<]{1,}.(' . $cdn_exts . '))([\"\\\'\s\?]{1})/';
+        $html =  preg_replace($regex, $cdn_host . '/$1$4', $html);
+    } else {
+        $regex  = '/' . str_replace('/', '\/', $local_host) . '\/([^\s\?\\\'\"\;\>\<]{1,}.(' . $cdn_exts . '))([\"\\\'\s\?]{1})/';
+        $html =  preg_replace($regex, $cdn_host . '/$1$3', $html);
+    }
+    return $html;
+}
+}
+
 //加载所需css
 function _add_theme_css(){
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+	wp_enqueue_style( 'icon', get_template_directory_uri() . '/css/icon.css' );
 	wp_enqueue_style( 'themedefault', get_template_directory_uri() . '/style.css' );  
 	if(is_home()){
 		wp_enqueue_style( 'homepage', get_template_directory_uri() . '/css/index.css' ); 
@@ -92,7 +137,7 @@ function cmp_breadcrumbs() {
 	$before = '<span class="current">'; // 在当前链接前插入
 	$after = '</span>'; // 在当前链接后插入
 	if ( !is_home() && !is_front_page() || is_paged() ) {
-		echo '<div itemscope itemtype="http://schema.org/WebPage" id="crumbs">'.__( '<i class="fa fa-home"></i>' , 'cmp' );
+		echo '<div itemscope itemtype="http://schema.org/WebPage" id="crumbs">'.__( '<span class="icon icon-home3"></span>' , 'cmp' );
 		global $post;
 		$homeLink = home_url();
 		echo ' <a itemprop="breadcrumb" href="' . $homeLink . '"  title="返回首页">' . __( '首页' , 'cmp' ) . '</a> ' . $delimiter . ' ';
@@ -279,6 +324,7 @@ function exclude_post_formats_from_homepage( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'exclude_post_formats_from_homepage' );
+/*
 function exclude_category_home( $query ) {  
     if ( $query->is_home ) {//是否首页  
         $query->set( 'cat', '-18' );  //排除的指定分类id  
@@ -287,6 +333,7 @@ function exclude_category_home( $query ) {
 }  
    
 add_filter( 'pre_get_posts', 'exclude_category_home' );  
+*/
 //图片自适应
 function remove_width_attribute( $html ) {
    $html = preg_replace( '/(width|height)="\d*"\s/', "", $html );
@@ -325,10 +372,10 @@ function ajax_get_gallery(){
 		while ( $photography -> have_posts() ) {
 			$photography -> the_post();
 			$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full');
-			$width = ( $thumb[1] / $thumb[2] )*350;
+			$width = ( $thumb[1] / $thumb[2] )*250;
 			?>
 			<a href="<?php the_permalink() ?>">
-				<figure style="width:<?php echo $width;?>px;height:350px;">
+				<figure style="width:<?php echo $width;?>px;height:250px;">
 					<?php the_post_thumbnail();?>
 					<figcaption>
 						<h2><?php the_title();?></h2>
@@ -406,5 +453,4 @@ function theme_submit_comment() {
 	do_action( 'set_comment_cookies', $comment, $user );
 	die();		
 }
-
 ?>

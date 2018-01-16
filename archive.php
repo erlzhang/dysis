@@ -7,7 +7,8 @@
 		</nav>
 	<?php $i = 1;while (have_posts()) : $i++;the_post();?>
 	<article class="article <?php if($i%2 != 0){ echo 'odd';}?>">
-		<a href="<?php the_permalink(); ?>"><div class="article-thumb"><?php the_post_thumbnail();?>
+		<a href="<?php the_permalink(); ?>"><div class="article-thumb">
+		<?php dysis_post_thumbnail(); ?>
 		</div></a>
 		<div class="article-content">
 			<?php the_title( sprintf( '<a href="%s" rel="bookmark"><h1>', esc_url( get_permalink() ) ), '</h1></a>' );?>
@@ -22,12 +23,7 @@
 		 </div>
 	</article>
 		<?php endwhile; ?>
-			<?php the_posts_pagination( array(
-				'mid_size' =>2,
-				'prev_text' => '<i class="fa fa-angle-left" aria-hidden="true"></i>',
-				'next_text' => '<i class="fa fa-angle-right" aria-hidden="true"></i>',
-				'screen_reader_text' => ''
-			) ); ?> 
+			<?php dysis_posts_pagination(); ?>
 			<?php endif;?>
 	</div>
 <?php get_footer();?>

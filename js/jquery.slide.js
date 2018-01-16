@@ -65,7 +65,7 @@ Author URI: http://erl.im/
 					slideRight();
 				}
 			}
-			this.append("<span id=\"slide-prev\" style=\"display:none\"><i class=\"fa fa-chevron-left\"></i></span><span id=\"slide-next\" style=\"display:none\"><i class=\"fa fa-chevron-right\"></i></span>");
+			this.append("<span id=\"slide-prev\" style=\"display:none\" class=\"icon icon-chevron-thin-left\"></span><span id=\"slide-next\" style=\"display:none\" class=\"icon icon-chevron-thin-right\"></span>");
 			
 			$("#slide-prev").on("click",slideLeft);
 			$("#slide-next").on("click",slideRight);

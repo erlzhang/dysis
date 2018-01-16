@@ -3,6 +3,30 @@
 	max-width:1000px;
 	margin:3rem auto;
 }
+.sub-category ul li{
+	display: inline-block;
+	margin: 10px;
+	float: right;
+	border-bottom: 2px solid transparent;
+}
+.sub-category ul li.cat-item-none {
+	display: none;
+}
+.sub-category ul li a {
+	line-height:45px;
+	display: block;
+	padding: 0 5px;
+	border-bottom: 2px solid transparent;
+}
+.sub-category ul li a:hover,.sub-category ul li.current-cat a {
+	color: #00adb5;
+	border-bottom: 2px solid #00adb5;
+}
+.sub-category:after {
+	content:"";
+	display:block;
+	clear:both;
+}
 .category-description{
 	margin-bottom:3rem;
 	background-color:#F0F0F0;

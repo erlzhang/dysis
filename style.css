@@ -1,6 +1,6 @@
-﻿﻿﻿/*
+/*
 Theme Name: Dysis
-Theme URI: http://erl.im/
+Theme URI: http://erl.im/dysis.html
 Description: Erl自用测试主题
 Tags: blog, portfolio, clean, white, elegant,lifestyle, simple, beauty, creative, modern, design, stylish
 Author: Erl
@@ -22,7 +22,7 @@ body,html{
 	font-family:"OpenSans","微软雅黑","宋体",Arial,Verdana,arial,serif;
 	width:100%;
 	height:100%;
-	line-height:1.5rem;
+	line-height:1.5em;
 }
 a{
 	text-decoration:none;
@@ -42,6 +42,9 @@ h1,h2,h3{
 .loading{
 	text-align:center;
 	line-height:50px;
+}
+.gray {
+	color: #999;
 }
 @-webkit-keyframes spin {
   0% {
@@ -67,8 +70,8 @@ h1,h2,h3{
 @keyframes fadeDown{
 	0%{
 		opacity: 0;
-		-webkit-transform: translate3d(0, -100%, 0);
-		transform: translate3d(0, -100%, 0);
+		-webkit-transform: translate3d(0, -30%, 0);
+		transform: translate3d(0, -30%, 0);
 	}
 	100%{
 		opacity: 1;
@@ -79,8 +82,8 @@ h1,h2,h3{
 @-webkit-keyframes fadeDown {
   0% {
 		opacity: 0;
-		-webkit-transform: translate3d(0, -100%, 0);
-		transform: translate3d(0, -100%, 0);
+		-webkit-transform: translate3d(0, -30%, 0);
+		transform: translate3d(0, -30%, 0);
   }
   100% {
 		opacity: 1;
@@ -112,17 +115,28 @@ h1,h2,h3{
 		transform: none;
   }
 }
-
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #999;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #999;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #999;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    #999;
+}
 
 .container{
 	width:100%;
 }
 .sidebar{
 	width:50px;
-	height:100%;
 	position:fixed;
 	left:0;
 	top:0;
+	bottom: 0;
 	text-align:center;
 	z-index:555;
 }
@@ -135,7 +149,7 @@ h1,h2,h3{
 	padding:10px;
 	position:relative;
 }
-.icon{
+.menu li .icon, .sidershow .icon{
 	display:inline-block;
 	width:30px!important;
 	height:30px;
@@ -172,9 +186,6 @@ h1,h2,h3{
 	line-height:50px;
 	position:relative;
 }
-.search .icon:hover{
-	
-}
 .input-search{
 	position:absolute;
 	line-height:40px;
@@ -196,7 +207,7 @@ h1,h2,h3{
 	cursor:pointer;
 	display:block;
 }
-.sidershow i.fa-bars{
+.sidershow .icon-grid{
 	display:none;
 }
 .author_cover,.author_info h3,.author_info p{
@@ -285,9 +296,17 @@ h1,h2,h3{
 .sidebar.open .author_icon{
 	display:block;
 }
+.sidebar.open .author_icon .icon {
+	font-size: 1.15rem;
+	padding: 8px;
+	border-radius: 50%;
+}
 .sidebar.open .menu li{
 	text-align:left;
 	padding:0 0 0 15px;
+}
+.sidebar.open .menu li:hover {
+	background: rgba(255, 255, 255, .05);
 }
 .sidebar.open .menu li a{
 	display:block;
@@ -304,6 +323,11 @@ h1,h2,h3{
 }
 .sidebar.open .menu li .menu_title:after{
 	display:none;
+}
+.sidebar.open .menu li:hover .icon {
+	background: transparent;
+	color: inherit;
+	font-size: 1.15rem;
 }
 .sidebar.open form{
 	display:inline-block;
@@ -334,7 +358,7 @@ h1,h2,h3{
 	cursor:pointer;
 	display:block;
 }
-.sidebar.open .siderhide i.fa-times{
+.sidebar.open .siderhide .icon-close{
 	display:none;
 	color:#efefef;
 }
@@ -362,18 +386,21 @@ h1,h2,h3{
 	.sidebar .sidershow{
 		display:inline-block;
 	}
-	.sidebar .sidershow i.fa-bars{
-		display:inline-block;
+	.sidebar .sidershow .icon-grid{
+		display:block;
 		position:fixed;
-		top:8px;
-		left:5px;
-		padding:7px 10px;
+		top:0;
+		left:0;
 		border-radius:5px;
 		text-align:center;
-		font-size:1.35rem;
+		font-size:2.2rem;
+		line-height: 50px!important;
+		height: 50px!important;
+		width: 50px!important;
+		text-align: center!important;
 	}
 
-	.sidebar.open .siderhide i.fa-times{
+	.sidebar.open .siderhide .icon-close{
 		display:inline-block;
 	}
 }
@@ -469,7 +496,7 @@ h1,h2,h3{
 		top:0;
 		left:0;
 		width:100%;
-		color:#333;
+		color:#212529;
 		background-color:#fff;
 		display:block;
 		z-index:444;
@@ -501,16 +528,16 @@ h1,h2,h3{
 }
 
 body,html,a,.menu li:hover .icon,.author_icon a:hover .icon{
-	color:#333;
+	color:#212529;
 }
-.sidebar,.icon,.menu li .menu_title,.input-search{
-	background-color:#333;
+.sidebar,.menu li .icon,.menu li .menu_title,.input-search{
+	background-color:#212529;
 }
 .menu li .menu_title:after{
-	border-color: transparent #333 transparent transparent;
+	border-color: transparent #212529 transparent transparent;
 }
 .author_info .avatar{
-	border: 5px solid #333;	
+	border: 5px solid #212529;	
 }
 .sidebar,.menu li a,.input-search,.sidershow,.author_icon a{
 	color:#f2f2f2;
@@ -519,8 +546,8 @@ body,html,a,.menu li:hover .icon,.author_icon a:hover .icon{
 	background-color:#f2f2f2;
 }
 @media screen and (max-width:1000px){
-	.siderhide,.sidebar .sidershow i.fa-bars,.mobile-top{
-		color:#333;
+	.siderhide,.sidebar .sidershow .icon-grid,.mobile-top{
+		color:#212529;
 	}
 
 }
@@ -532,20 +559,20 @@ body,html,a,.menu li:hover .icon,.author_icon a:hover .icon{
 	margin:1.5rem 0;
 }
 .navigation:before{
-	content:"";
-	clear:both;
-	display:block;
+	content: "";
+	clear: both;
+	display: block;
 }
 .page-numbers{
-	display:inline-block;
-	padding:5px 15px;
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 0 5px;
+	border-bottom: 2px solid transparent;
+	color: #999;
 }
-.page-numbers:hover,.page-numbers.current,.page-numbers.prev,.page-numbers.next{
-	background-color:#111;
-	color:#fff;
-}
-.page-numbers.prev,.page-numbers.next{
-	border-radius:50%;
+.page-numbers:hover, .page-numbers.current{
+	border-bottom-color: #212529;
+	color: #212529;
 }
 
 /*面包屑导航*/
@@ -554,8 +581,9 @@ body,html,a,.menu li:hover .icon,.author_icon a:hover .icon{
 	color:#999;
 	margin-bottom:1.5rem;
 }
-.breadcrumbs a{
+.breadcrumbs a, .breadcrumbs span{
 	color:#999;
+	margin: 0 5px;
 }
 .breadcrumbs a i{
 	margin-right:5px;

@@ -99,32 +99,38 @@
 }
 .comment-author-input{
 	position:fixed;
-	max-width:320px;
+	max-width:420px;
 	width:100%;
 	top:100px;
 	left:50%;
 	margin-left:-160px;
 	border:1px solid #e6eaea;
-	background-color:#fff;
+	background-color: #fff;
 	box-shadow:3px 3px 5px #666;
-	padding:1.5rem 1rem;
+	padding:2rem 1.5rem;
 	z-index:555;
 	border-radius:5px;
 	opacity:0;
-	margin-top:0;
+	margin-top:50px;
+	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
 }
 .comment-author-input.show{
-	opacity:1;
-	margin-top:50px;
+	-webkit-animation-name: fadeDown;
+	animation-name: fadeDown;
+	-webkit-animation-duration: .35s;
+	animation-duration: .35s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	animation-delay:.15s;
+	-webkit-animation-delay:.15s;
 }
 .comment-author-input-avatar{
 	text-align:center;
 	margin-bottom:10px;
 }
 .comment-author-input p{
-	margin-bottom:10px!important;
-}
-.comment-author-input p.small{
+	margin: 1rem 0;
 	color:#999;
 	font-size:.9rem;
 }
@@ -137,14 +143,20 @@
 	position:absolute;
 	padding:0 5px;
 	font-size:20px;
-	line-height:30px;
+	line-height:35px;
 	color:#666;
 	vertical-align:middle;
 }
+.comment-author-input li label .icon {
+	font-size: 1.4rem;
+}
+.comment-author-input li label .icon:before {
+	vertical-align: middle;
+}
 .input-text{
 	font-family:"OpenSans","微软雅黑","宋体",Arial,Verdana,arial,serif;
-	line-height:30px;
-	padding:3px 5px 3px 30px;
+	line-height:35px;
+	padding:3px 5px 3px 35px;
 	font-size:1rem;
 	width:100%;
 	border-bottom:1px solid #fff;
@@ -167,6 +179,7 @@
 	resize:none;
 	border-color:#fff;
 }
+
 .respond-box .textarea:focus{
 	outline:none;
 }
@@ -174,12 +187,15 @@
 	background:none;
 	color:#00ADB5;
 	cursor:pointer;
-	font-size:1.8rem;
+	font-size:2.3rem;
 	border:0;
 	line-height:45px;
 	position:absolute;
 	right:5px;
 	top:0;
+}
+.submit span.icon {
+	vertical-align: middle;
 }
 .submit[disabled]{
 	color:#ccc;
@@ -193,6 +209,7 @@
 .smiley img{
 	width:26px;
 	margin-right:3px;
+	margin-top: 10px;
 }
 .wp-smiley{
 	width:26px;
@@ -272,6 +289,10 @@
 .info a{
 	color:#428bca
 }
+.icon-spin {
+	-webkit-animation: spin 2s infinite linear;
+	animation: spin 2s infinite linear;
+}
 /*
 @media screen and (max-width:1000px){
 	.bottom-comment-bar{
@@ -327,6 +348,10 @@
 .comment-author .avatar{
 	float:left;
 	margin-right:10px;
+}
+.comment-author .says {
+	color: #666;
+	font-size: 90%;
 }
 cite.fn{
 	font-style:normal;

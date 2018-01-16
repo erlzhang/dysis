@@ -46,6 +46,7 @@
 	float:right;
 	margin:3rem 10%;
 	padding:1rem;
+	overflow-y:scroll;
 }
 .novel-catalog h3{
 	display:none;

@@ -1,186 +1,186 @@
-.nofound{ max-width:650px; padding:20px; width:100%; margin:3rem auto; text-align:center;}
-.nofound h1{ font-size:150px; font-weight:bold; line-height:1.2em;}
-.nofound h2{ font-size:1.8rem; line-height:1.5em;}
-.nofound h3{ font-size:1.35rem; color:#999; line-height:1.5em; }
-.playball{
-	width:300px;
-	height:80px;
-	margin:3.5rem auto 0 auto;
-	position:relative;
-}
-.person{
-	position:absolute;
-	width:40px;
-	height:40px;
-}
-.person-left{
-	left:0;
-}
-.person-right{
-	right:0;
-}
-.sec{
-	background-color:#333;
-	display:inline-block;
-	position:absolute;
-}
-.head{
-	width:12.5px;
-	height:12.5px;
-	border-radius:50%;
-	top:0;
-	left:0;
-}
-
-.body{
-	width:12.5px;
-	height:30px;
-	border-radius:20px;
-	top:13px;
-	left:0;
-}
-.arm{
-	width:6px;
-	border-radius:5px;
-}
-.arm-left-top{
-	height:15px;
-	left:-4px;
-	top:12.5px;
-	transform:rotate(60deg);
-}
-.arm-left-bottom{
-	height:15px;
-	left:-9px;
-	top:21px;
-	transform:rotate(-5deg);
-}
-.arm-right{
-	height:25px;
-	left:13px;
-	top:13px;
-	transform:rotate(-60deg);
-}
-.leg{
-	width:7px;
-	border-radius:5px;
-}
-.leg-left-top{
-	top:39px;
-	left:5px;
-	height:17px;
-	transform:rotate(-40deg);
-	transform-origin:left top;
-}
-.leg-right{
-	top:37px;
-	left:0px;
-	height:25px;
-}
-.leg-left-bottom{
-	width:6.5px;
-	height:15px;
-	left:13.5px;
-	top:46px;
-	transform:rotate(10deg);
-	transform-origin:left top;
-	animation: legleft 3s infinite linear;
-}
-
-.person-right .arm-left-top{
-	left:12px;
-	transform:rotate(-60deg);
-}
-.person-right .arm-left-bottom{
-	left:17px;
-	transform:rotate(5deg);
-}
-.person-right .arm-right{
-	height:25px;
-	left:-7px;
-	top:13px;
-	transform:rotate(60deg);
-}
-
-.person-right .leg-left-top{
-	left:0px;
-	transform:rotate(40deg);
-	transform-origin:right top;
-}
-.person-right .leg-right{
-	left:5px;
-}
-.person-right .leg-left-bottom{
-	left:-9px;
-	transform:rotate(-10deg);
-	transform-origin:right top;
-	animation: legright 3s infinite linear;
-}
-
-.ball{
-	width:10px;
-	height:10px;
-	border:3px solid #333;
-	border-radius:50%;
-	position:absolute;
-	top:46px;
-	left:20px;
-	animation: roll 3s infinite ease;
-}
-
-@keyframes roll {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-	left:20px;
-	top:46px;
-  }
-  25%{
-	 top:26px; 
-  }
-  50%{
-    -webkit-transform: rotate(359deg);
-	transform: rotate(359deg);
-	left:234px;
-	top:46px;
-  }
-  75%{
-	  top:26px;
-  }
-  100% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-	left:20px;
-	top:46px;
-  }
-}
-
-@keyframes legleft {
-  0% {
-    top:46px;
-	transform:rotate(10deg);
-  }
-  2%{
-	transform:rotate(-40deg);
-	top:49px;
-  }
-  12%{
-	top:46px;
-	transform:rotate(10deg);
-  }
-}
-
-@keyframes legright {
-  48% {
-	top:46px;
-	transform:rotate(-10deg);
-  }
-  50%{
-	transform:rotate(40deg);
-	top:50px;
-  }
-  60%{
-	top:46px;
-	transform:rotate(-10deg); 
-  }
-}
+.nofound{ max-width:650px; padding:20px; width:100%; margin:3rem auto; text-align:center;}
+.nofound h1{ font-size:150px; font-weight:bold; line-height:1.2em;}
+.nofound h2{ font-size:1.8rem; line-height:1.5em;}
+.nofound h3{ font-size:1.35rem; color:#999; line-height:1.5em; }
+.playball{
+	width:300px;
+	height:80px;
+	margin:3.5rem auto 0 auto;
+	position:relative;
+}
+.person{
+	position:absolute;
+	width:40px;
+	height:40px;
+}
+.person-left{
+	left:0;
+}
+.person-right{
+	right:0;
+}
+.sec{
+	background-color:#333;
+	display:inline-block;
+	position:absolute;
+}
+.head{
+	width:12.5px;
+	height:12.5px;
+	border-radius:50%;
+	top:0;
+	left:0;
+}
+
+.body{
+	width:12.5px;
+	height:30px;
+	border-radius:20px;
+	top:13px;
+	left:0;
+}
+.arm{
+	width:6px;
+	border-radius:5px;
+}
+.arm-left-top{
+	height:15px;
+	left:-4px;
+	top:12.5px;
+	transform:rotate(60deg);
+}
+.arm-left-bottom{
+	height:15px;
+	left:-9px;
+	top:21px;
+	transform:rotate(-5deg);
+}
+.arm-right{
+	height:25px;
+	left:13px;
+	top:13px;
+	transform:rotate(-60deg);
+}
+.leg{
+	width:7px;
+	border-radius:5px;
+}
+.leg-left-top{
+	top:39px;
+	left:5px;
+	height:17px;
+	transform:rotate(-40deg);
+	transform-origin:left top;
+}
+.leg-right{
+	top:37px;
+	left:0px;
+	height:25px;
+}
+.leg-left-bottom{
+	width:6.5px;
+	height:15px;
+	left:13.5px;
+	top:46px;
+	transform:rotate(10deg);
+	transform-origin:left top;
+	animation: legleft 3s infinite linear;
+}
+
+.person-right .arm-left-top{
+	left:12px;
+	transform:rotate(-60deg);
+}
+.person-right .arm-left-bottom{
+	left:17px;
+	transform:rotate(5deg);
+}
+.person-right .arm-right{
+	height:25px;
+	left:-7px;
+	top:13px;
+	transform:rotate(60deg);
+}
+
+.person-right .leg-left-top{
+	left:0px;
+	transform:rotate(40deg);
+	transform-origin:right top;
+}
+.person-right .leg-right{
+	left:5px;
+}
+.person-right .leg-left-bottom{
+	left:-9px;
+	transform:rotate(-10deg);
+	transform-origin:right top;
+	animation: legright 3s infinite linear;
+}
+
+.ball{
+	width:10px;
+	height:10px;
+	border:3px solid #333;
+	border-radius:50%;
+	position:absolute;
+	top:46px;
+	left:20px;
+	animation: roll 3s infinite ease;
+}
+
+@keyframes roll {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+	left:20px;
+	top:46px;
+  }
+  25%{
+	 top:26px; 
+  }
+  50%{
+    -webkit-transform: rotate(359deg);
+	transform: rotate(359deg);
+	left:234px;
+	top:46px;
+  }
+  75%{
+	  top:26px;
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+	left:20px;
+	top:46px;
+  }
+}
+
+@keyframes legleft {
+  0% {
+    top:46px;
+	transform:rotate(10deg);
+  }
+  2%{
+	transform:rotate(-40deg);
+	top:49px;
+  }
+  12%{
+	top:46px;
+	transform:rotate(10deg);
+  }
+}
+
+@keyframes legright {
+  48% {
+	top:46px;
+	transform:rotate(-10deg);
+  }
+  50%{
+	transform:rotate(40deg);
+	top:50px;
+  }
+  60%{
+	top:46px;
+	transform:rotate(-10deg); 
+  }
+}

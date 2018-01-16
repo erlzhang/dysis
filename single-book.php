@@ -18,12 +18,14 @@
 			</div>
 			<div class="toggle-novel-catalog" id="toggle-novel-catalog"><i class="fa fa-th-large"></i><em>章节</em></div>
 			<div class="novel-catalog">
-				<h3><span id="novel-catalog-off" class="mobile-off"><i class="fa fa-angle-left"></i></span>选择章节</h3>
-				<?php 
-				for ( $i = 1; $i <= $chapter_number ; $i++){
-					echo '<a href="#'.$i.'" onclick="showChapter('.$i.')">'.$i.'</a>';
-				}
-				?>
+				<div class="novel-catalog-inner">
+					<h3><span id="novel-catalog-off" class="mobile-off"><i class="fa fa-angle-left"></i></span>选择章节</h3>
+					<?php 
+					for ( $i = 1; $i <= $chapter_number ; $i++){
+						echo '<a href="#'.$i.'" onclick="showChapter('.$i.')">'.$i.'</a>';
+					}
+					?>
+				</div>
 			</div>
 			<?php endwhile; ?>
 			<?php endif; ?> 

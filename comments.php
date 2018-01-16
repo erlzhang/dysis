@@ -57,23 +57,23 @@
 							}
 							?>
 						</div>
-						<p>您的电子邮件不会被公布，带*为必填。</p>
+						<p class="gray">您的电子邮件不会被公布，带*为必填。</p>
 						<li>
-							<label for="author"><small><i class="fa fa-user fa-fw"></i></small></label>
+							<label for="author"><small><span class="icon icon-user"></span></small></label>
 							<input type="text" name="author" id="author" class="input-text" value="<?php echo $comment_author; ?>" size="22" tabindex="1" placeholder="Name*" />
 						</li>
 						<li>
-							<label for="email"><small><i class="fa fa-envelope fa-fw"></i></small></label>
+							<label for="email"><small><span class="icon icon-envelope"></span></small></label>
 							<input type="text" name="email" id="email" class="input-text" value="<?php echo $comment_author_email; ?>" size="22" placeholder="Email*" tabindex="2" />
 						</li>
 						<li>
-							<label for="url"><small><i class="fa fa-globe fa-fw"></i></small></label>
+							<label for="url"><small><span class="icon icon-link"><span></small></label>
 							<input type="text" name="url" id="url" class="input-text" value="<?php echo $comment_author_url; ?>" size="22"placeholder="http://"  tabindex="3" />
 						</li>
 					</div>
 					<?php endif;?>
 				<textarea name="comment" id="comment" class="textarea" rows="1"  placeholder="要说点什么么……" tabindex="4" rows="1"></textarea>
-				<button class="submit" name="submit" type="submit" id="submit" tabindex="5" disabled="disabled"><i class="fa fa-paper-plane"></i></button>
+				<button class="submit" name="submit" type="submit" id="submit" tabindex="5" disabled="disabled"><span class="icon icon-paperplane"></span></button>
 				<div class="smiley" id="comment-smiley">
 					<?php include("smiley.php");?>
 				</div>
@@ -81,9 +81,9 @@
 			<?php comment_id_fields(); ?>
 			<?php do_action('comment_form', $post->ID); ?>
 			<div class="respond-status">
-				<div id="loading" class="loading"><i class="fa fa-spinner fa-spin"></i>&nbsp;&nbsp;正在提交中，请稍候...</div>
+				<div id="loading" class="loading"><span class="icon icon-spinner icon-spin"></span>&nbsp;&nbsp;正在提交中，请稍候...</div>
 				<div id="error" class="warning"></div>
-				<div id="success" class="success"><i class="fa fa-check"></i>&nbsp;&nbsp;评论提交成功</div>
+				<div id="success" class="success"><span class="icon icon-check"></span>&nbsp;&nbsp;评论提交成功</div>
 				<div id="replying" class="info">回复 <strong id="replying-parent"></strong> 的评论,点击取消回复。</div>
 			</div>
 		</div>

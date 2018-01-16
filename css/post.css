@@ -15,6 +15,7 @@
 }
 .content p{
 	margin-bottom:1rem;
+	line-height: 1.75em;
 }
 .content-header{
 	margin-bottom:3rem;
@@ -69,9 +70,9 @@
 	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
 .content pre{
-	padding:20px;
-	border-radius:10px;
+	padding:20px 20px 20px 20px;
 	margin-bottom:1rem;
+	
 	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
 .content pre code{
@@ -161,25 +162,25 @@
 
 
 .content-header p,.content-header p a,.content code,.content pre,.content blockquote{
-	color:#787878;
+	color: #6c757d;
 }
 .content a{
-	color:#00ADB5;
+	color: #00ADB5;
 }
 .content table{
-	border:1px #ddd solid;
+	border:1px #e9ecef solid;
 }
 .content table tr{
-	border-top:1px solid #ddd;
+	border-top:1px solid #e9ecef;
 }
 .content table thead{
-	border-bottom:2px solid #ddd;
+	border-bottom:2px solid #e9ecef;
 }
 .content pre,.content code{
-	background-color:#F0F0F0;
+	background-color:#f8f9fa;
 }
 .content blockquote{
-	border-left:5px solid #a9a9a9;
+	border-left:3px solid #e9ecef;
 }
 .content-catalog li.current{
 	color:#00ADB5;
@@ -270,7 +271,9 @@
     width: 0;
     height: 0;
 }
+.post-like span {
+	cursor: pointer;
+}
 .post-like-on{
 	color:#d9534f;
 }
-
