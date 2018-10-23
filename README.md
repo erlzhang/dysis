@@ -21,7 +21,7 @@
 
 不支持自定义菜单（我嫌麻烦，没写），左侧菜单是以代码形式直接写在header.php里的。
 
-![wordpress theme Dysis](https://erl.im/img/dysis/dysis_1.png)
+![wordpress theme Dysis](http://yexiqingxi.com/img/dysis/dysis_1.png)
 
 如有需要，请自行增删改减，内置[Font Awesome](http://fontawesome.io/)。
 
@@ -33,9 +33,9 @@
 
 `functions.php` 里有两个地方需要手动改动，不然首页及归档页面不会正常显示的
 
-![dysis](https://erl.im/img/dysis/dysis_2.png)
+![dysis](https://yexiqingxi.com/img/dysis/dysis_2.png)
 
-![wordpress theme Dysis](https://erl.im/img/dysis/dysis_3.png)
+![wordpress theme Dysis](https://yexiqingxi.com/img/dysis/dysis_3.png)
 
 打开 `functions.php` ，找到上两处地方，把红圈里的数字替换为所创建的相册的分类的id。
 
@@ -45,7 +45,7 @@
 
 后台的添加小说功能添加的只是单本小说名目，详细章节内容并不是像其他文章一样存储在数据库里，而是直接写在txt文本里，放在 `wp-content/novel/[小说别名] ` 的文件夹下，如图所示：
 
-![wordpress theme Dysis](https://erl.im/img/dysis/dysis_4.png)
+![wordpress theme Dysis](https://yexiqingxi.com/img/dysis/dysis_4.png)
 
 所以，首先要在 `wp-content` 下面创建一个 `novel` 文件夹，然后再创建一个以小说别名命名的文件夹，把小说每一章放在一个 `txt` 文本里，以数字命名（数字一定要连着）。
 
